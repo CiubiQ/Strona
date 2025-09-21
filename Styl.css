@@ -1,38 +1,31 @@
 body {
-    background-color: #3498db; /* Niebieskie tło */
+    background-color: #3498db;
     font-family: sans-serif;
     margin: 0;
     padding: 0;
     
-    /* ZMIANY: Ustawienia dla "przyklejonej" stopki */
+    /* Ustawiamy body jako kontener flex w kierunku kolumny */
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Minimalna wysokość body to 100% ekranu */
+    min-height: 100vh; /* Minimalna wysokość to 100% ekranu */
 }
 
-/* Wrapper dla głównej treści, aby wypchnąć stopkę w dół */
+/* Główna sekcja ma "rosnąć", aby wypchnąć stopkę na dół */
 main {
-    flex-grow: 1; /* Pozwala temu elementowi rosnąć i zająć dostępną przestrzeń */
+    flex-grow: 1;
     
-    /* Dodane, aby wyśrodkować menu tak jak poprzednio */
+    /* Ustawiamy main jako kontener flex, aby wyśrodkować jego zawartość */
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column; /* Układamy elementy (h1, nav) pionowo */
+    justify-content: center; /* Wyśrodkowanie w pionie */
+    align-items: center;   /* Wyśrodkowanie w poziomie */
     padding: 20px;
 }
 
-/* --- Style dla Nagłówka (bez zmian) --- */
 h1 {
     color: white;
     text-align: center;
-}
-
-
-/* --- Style dla Menu (bez zmian) --- */
-.main-menu {
-    display: flex;
-    justify-content: center;
+    margin-bottom: 20px; /* Dodajemy odstęp pod tytułem */
 }
 
 .main-menu ul {
@@ -41,7 +34,7 @@ h1 {
     padding: 20px;
     background-color: #2980b9;
     border-radius: 10px;
-    display: flex;
+    display: flex; /* To ustawia elementy menu (Strona główna, Tabela itd.) w rzędzie */
 }
 
 .main-menu ul li {
@@ -62,24 +55,25 @@ h1 {
     background-color: #3498db;
 }
 
-/* --- NOWE STYLE DLA STOPKI --- */
+/* Style dla stopki */
 footer {
-    background-color: #2980b9; /* Kolor pasujący do menu */
+    background-color: #2980b9;
     color: white;
     text-align: center;
-    padding: 15px 0; /* Wewnętrzny margines góra/dół */
+    padding: 15px 0;
     width: 100%;
 }
 
 footer p {
-    margin: 0; /* Usuwamy domyślny margines paragrafu */
+    margin: 0;
 }
 
 
-/* --- SEKCJA RESPONSIVE --- */
+/* --- SEKCJA RESPONSIVE (Dla telefonów) --- */
 @media (max-width: 680px) {
     main {
-        justify-content: flex-start; /* Na telefonie treść wyrównana do góry */
+        /* Na małym ekranie treść jest bliżej góry */
+        justify-content: flex-start;
         padding-top: 20px;
     }
 
@@ -88,13 +82,13 @@ footer p {
     }
 
     .main-menu ul {
-        flex-direction: column;
+        flex-direction: column; /* Zmieniamy menu na pionowe */
         width: 80%;
         padding: 10px;
     }
 
     .main-menu ul li {
-        margin: 8px 0;
+        margin: 8px 0; /* Margines pionowy zamiast poziomego */
         text-align: center;
     }
 }
