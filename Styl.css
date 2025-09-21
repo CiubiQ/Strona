@@ -1,31 +1,51 @@
 body {
     background-color: #3498db; /* Niebieskie tło */
     font-family: sans-serif;
-    margin: 0; /* Usuwamy domyślne marginesy */
+    margin: 0;
     padding: 0;
     
-    /* Dodane właściwości do wyśrodkowania */
-    display: flex; /* Włączamy tryb Flexbox dla body */
-    justify-content: center; /* Wyśrodkowuje zawartość w poziomie */
-    align-items: center; /* Wyśrodkowuje zawartość w pionie */
-    height: 100vh; /* Ustawia wysokość body na 100% wysokości okna przeglądarki */
+    /* ZMIANY: Ustawienia dla "przyklejonej" stopki */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Minimalna wysokość body to 100% ekranu */
 }
 
+/* Wrapper dla głównej treści, aby wypchnąć stopkę w dół */
+main {
+    flex-grow: 1; /* Pozwala temu elementowi rosnąć i zająć dostępną przestrzeń */
+    
+    /* Dodane, aby wyśrodkować menu tak jak poprzednio */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* --- Style dla Nagłówka (bez zmian) --- */
+h1 {
+    color: white;
+    text-align: center;
+}
+
+
+/* --- Style dla Menu (bez zmian) --- */
 .main-menu {
-    /* Właściwości dla samego kontenera menu, jeśli chcesz dodać np. tło */
+    display: flex;
+    justify-content: center;
 }
 
 .main-menu ul {
     list-style: none;
     margin: 0;
-    padding: 20px; /* Dodajemy trochę wewnętrznego marginesu, żeby wyglądało lepiej */
-    background-color: #2980b9; /* Ciemniejszy odcień niebieskiego dla tła menu */
-    border-radius: 10px; /* Dodajemy zaokrąglone rogi */
+    padding: 20px;
+    background-color: #2980b9;
+    border-radius: 10px;
+    display: flex;
 }
 
 .main-menu ul li {
-    display: inline-block; /* Elementy menu wyświetlają się w jednej linii */
-    margin: 0 15px; /* Odstęp między przyciskami */
+    margin: 0 15px;
 }
 
 .main-menu ul li a {
@@ -35,8 +55,46 @@ body {
     padding: 10px 15px;
     border-radius: 5px;
     transition: background-color 0.3s;
+    display: block;
 }
 
 .main-menu ul li a:hover {
-    background-color: #3498db; /* Jaśniejszy niebieski po najechaniu */
+    background-color: #3498db;
+}
+
+/* --- NOWE STYLE DLA STOPKI --- */
+footer {
+    background-color: #2980b9; /* Kolor pasujący do menu */
+    color: white;
+    text-align: center;
+    padding: 15px 0; /* Wewnętrzny margines góra/dół */
+    width: 100%;
+}
+
+footer p {
+    margin: 0; /* Usuwamy domyślny margines paragrafu */
+}
+
+
+/* --- SEKCJA RESPONSIVE --- */
+@media (max-width: 680px) {
+    main {
+        justify-content: flex-start; /* Na telefonie treść wyrównana do góry */
+        padding-top: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .main-menu ul {
+        flex-direction: column;
+        width: 80%;
+        padding: 10px;
+    }
+
+    .main-menu ul li {
+        margin: 8px 0;
+        text-align: center;
+    }
 }
