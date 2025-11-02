@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.container {
+    background-color: #fff;
+    padding: 20px 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    color: #0056b3;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #ddd;
+    margin: 20px 0;
+}
+
+.mail-link {
+    display: inline-block; 
+    margin-top: 15px;
+    transition: transform 0.2s; 
+}
+
+
+.mail-link:hover {
+    transform: scale(1.05); 
+}
+
+a.mail-link {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: 2px solid #007BFF;
+    border-radius: 5px;
+}
+
+a.mail-link:hover {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+.mail-link img {
+    border-radius: 5px; 
+    border: 2px solid transparent;
+}
+
+.mail-link:hover img {
+    border-color: #0056b3;
+}
