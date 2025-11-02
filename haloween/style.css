@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('tlo.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #1a1a1a;
+    color: #ff8c00;
+    font-family: 'Creepster', cursive;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    animation: fadeIn 3s ease-in-out;
+    position: relative;
+    z-index: 20;
+    box-sizing: border-box;
+    padding-bottom: 10vh;
+}
+
+h1 {
+    font-size: 5rem;
+    text-shadow: 3px 3px 5px #000;
+    margin-bottom: 1rem;
+    animation: flickering 4s infinite;
+}
+
+p {
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 3px #000;
+}
+
+#pumpkin {
+    max-width: 300px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    animation: glowing 2s infinite alternate;
+}
+
+#pumpkin:hover {
+    transform: scale(1.1);
+}
+
+
+#info-link {
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-bottom: 20px;
+    border: 2px solid #ff8c00;
+    padding: 5px 15px;
+    border-radius: 15px;
+    transition: all 0.3s;
+}
+
+#info-link:hover {
+    background-color: #ff8c00;
+    color: #1a1a1a;
+    text-shadow: none;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 99;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#overlay.visible {
+    opacity: 1;
+    pointer-events: all;
+}
+
+#info-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 90%;
+    max-width: 400px;
+    height: 100vh;
+    background-color: #1a1a1a;
+    border-left: 3px solid #ff8c00;
+    z-index: 100;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in-out;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    font-family: Arial, sans-serif; 
+}
+
+#info-panel.visible {
+    transform: translateX(0);
+}
+
+#info-panel h2 {
+    font-family: 'Creepster', cursive;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 30px;
+}
+
+#info-panel p {
+    font-size: 1rem;
+    line-height: 1.6;
+    text-shadow: none;
+    color: #ddd;
+}
+
+#close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: #ff8c00;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+
+@keyframes glowing {
+    from { filter: drop-shadow(0 0 15px #ff8c00); }
+    to { filter: drop-shadow(0 0 30px #ff4500); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes flickering {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+    25%, 75% { opacity: 0.9; }
+}
+
+.spiderweb {
+    position: absolute;
+    width: 200px;
+    height: auto;
+    opacity: 0.7;
+    pointer-events: none;
+    z-index: 30;
+}
+
+.top-left { top: -20px; left: -20px; }
+.top-right { top: -20px; right: -20px; transform: scaleX(-1); }
+.bottom-left { bottom: -20px; left: -20px; transform: scaleY(-1); }
+.bottom-right { bottom: -20px; right: -20px; transform: scaleX(-1) scaleY(-1); }
+
+#jumpscare {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+#jumpscare img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#bats-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.bat {
+    position: absolute;
+    background-image: url('bats.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: flap 0.2s steps(2, end) infinite alternate;
+    transition: top linear, left linear;
+}
+
+@keyframes flap {
+    from { transform: scaleY(1); }
+    to { transform: scaleY(-1); }
+}
