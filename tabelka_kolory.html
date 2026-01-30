@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paleta Kolorów</title>
+    <style>
+        /* Styl do wyśrodkowania elementu na stronie */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0; /* Jasne tło dla lepszej widoczności */
+            font-family: Arial, sans-serif;
+        }
+
+        /* Główny kontener dla siatki kolorów */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 100px); /* 4 kolumny o szerokości 100px */
+            grid-template-rows: repeat(4, 100px);    /* 4 wiersze o wysokości 100px */
+            border: 2px solid black;
+        }
+
+        /* Styl dla pojedynczego pola z kolorem */
+        .color-box {
+            padding: 8px;
+            font-weight: bold;
+            border: 1px solid black; /* Cienka czarna ramka dla każdego pola */
+        }
+        
+        /* Specjalny styl dla koloru fioletowego - przerywana ramka */
+        .purple {
+            border: 3px dashed black !important; /* Grubsza, przerywana ramka */
+        }
+
+        /* Definicje kolorów tła i tekstu dla każdego pola */
+        .silver { background-color: #C0C0C0; color: black; }
+        .gray   { background-color: #808080; color: white; }
+        .maroon { background-color: #800000; color: white; }
+        .green  { background-color: #008000; color: white; }
+        .white  { background-color: #FFFFFF; color: black; }
+        .black  { background-color: #000000; color: white; }
+        .red    { background-color: #FF0000; color: white; }
+        .lime   { background-color: #00FF00; color: black; }
+        .navy   { background-color: #000080; color: white; }
+        .purple { background-color: #800080; color: white; }
+        .olive  { background-color: #808000; color: white; }
+        .teal   { background-color: #008080; color: white; }
+        .blue   { background-color: #0000FF; color: white; }
+        .magenta{ background-color: #FF00FF; color: black; }
+        .yellow { background-color: #FFFF00; color: black; }
+        .cyan   { background-color: #00FFFF; color: black; }
+    </style>
+</head>
+<body>
+
+    <div class="color-grid">
+        <div class="color-box silver">silver<br>C0C0C0</div>
+        <div class="color-box gray">gray<br>808080</div>
+        <div class="color-box maroon">maroon<br>800000</div>
+        <div class="color-box green">green<br>008000</div>
+        <div class="color-box white">white<br>FFFFFF</div>
+        <div class="color-box black">black<br>000000</div>
+        <div class="color-box red">red<br>FF0000</div>
+        <div class="color-box lime">lime<br>00FF00</div>
+        <div class="color-box navy">navy<br>000080</div>
+        <div class="color-box purple">purple<br>800080</div>
+        <div class="color-box olive">olive<br>808000</div>
+        <div class="color-box teal">teal<br>008080</div>
+        <div class="color-box blue">blue<br>0000FF</div>
+        <div class="color-box magenta">magenta<br>FF00FF</div>
+        <div class="color-box yellow">yellow<br>FFFF00</div>
+        <div class="color-box cyan">cyan<br>00FFFF</div>
+    </div>
+
+</body>
+</html>
