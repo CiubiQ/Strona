@@ -5,46 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paleta Kolorów - Wyśrodkowany Tekst</title>
     <style>
-        /* Styl do wyśrodkowania elementu na stronie */
         body {
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             margin: 0;
-            background-color: #f0f0f0; /* Jasne tło dla lepszej widoczności */
+            background-color: #f0f0f0; 
             font-family: Arial, sans-serif;
         }
-
-        /* Główny kontener dla siatki kolorów */
         .color-grid {
             display: grid;
-            grid-template-columns: repeat(4, 100px); /* 4 kolumny o szerokości 100px */
-            grid-template-rows: repeat(4, 100px);    /* 4 wiersze o wysokości 100px */
+            grid-template-columns: repeat(4, 100px);
+            grid-template-rows: repeat(4, 100px);   
             border: 2px solid black;
-            gap: 2px; /* Dodaje przerwę między komórkami */
-            background-color: white; /* Ustawia kolor przerw na biały */
+            gap: 2px; 
+            background-color: white; 
         }
-
-        /* Styl dla pojedynczego pola z kolorem */
         .color-box {
             font-weight: bold;
-            border: 1px solid black; /* Cienka czarna ramka dla każdego pola */
-            
-            /* NOWOŚĆ: Użycie Flexbox do idealnego wyśrodkowania tekstu */
+            border: 1px solid black; 
             display: flex;
-            flex-direction: column; /* Ustawia elementy jeden pod drugim */
-            justify-content: center; /* Wyśrodkowanie w pionie */
-            align-items: center;     /* Wyśrodkowanie w poziomie */
-            text-align: center;      /* Dodatkowe wyśrodkowanie tekstu */
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center;    
+            text-align: center;    
         }
-        
-        /* Specjalny styl dla koloru fioletowego - przerywana ramka */
         .purple {
-            border: 3px dashed black !important; /* Grubsza, przerywana ramka */
+            border: 3px dashed black !important; 
         }
-
-        /* Definicje kolorów tła i tekstu dla każdego pola */
         .silver { background-color: #C0C0C0; color: black; }
         .gray   { background-color: #808080; color: white; }
         .maroon { background-color: #800000; color: white; }
@@ -64,7 +53,6 @@
     </style>
 </head>
 <body>
-
     <div class="color-grid">
         <div class="color-box silver">silver<br>C0C0C0</div>
         <div class="color-box gray">gray<br>808080</div>
@@ -83,6 +71,5 @@
         <div class="color-box yellow">yellow<br>FFFF00</div>
         <div class="color-box cyan">cyan<br>00FFFF</div>
     </div>
-
 </body>
 </html>
